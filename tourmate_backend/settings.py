@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'users',
     'corsheaders',
     'rest_framework_simplejwt',
+    'places',
 ]
 
 MIDDLEWARE = [
@@ -144,5 +145,6 @@ EMAIL_HOST_USER = 'tourmate37@gmail.com'
 EMAIL_HOST_PASSWORD = 'xbpfeejdmrmvcnwp'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 

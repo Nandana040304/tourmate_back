@@ -17,7 +17,6 @@ from .serializers import ProfileSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.decorators import permission_classes
-from rest_framework.decorators import api_view
 
 
 User = get_user_model()
@@ -104,4 +103,4 @@ def profile_view(request):
     user = request.user
     serializer = ProfileSerializer(request.user)
     return Response(serializer.data)
-    
+

@@ -20,6 +20,8 @@ from users.views import reset_password_page
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework_simplejwt.views import TokenObtainPairView
+from django.urls import path, include
+
 
 
 urlpatterns = [
@@ -27,6 +29,9 @@ urlpatterns = [
     path('api/', include('users.urls')),
     path('reset-password/<str:token>/', reset_password_page, name='reset_password_page'),
     path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/', include('places.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
