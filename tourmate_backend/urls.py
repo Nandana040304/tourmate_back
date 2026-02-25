@@ -30,6 +30,7 @@ urlpatterns = [
     path('reset-password/<str:token>/', reset_password_page, name='reset_password_page'),
     path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/', include('places.urls')),
+    path('api/sos/', include('sos.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
